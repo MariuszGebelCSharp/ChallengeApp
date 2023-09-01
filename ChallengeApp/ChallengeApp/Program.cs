@@ -1,38 +1,37 @@
-﻿int[] grades = new int[365];
-string[] daysOfWeek = new string[7];
-daysOfWeek[0] = "poniedziałek";
-daysOfWeek[1] = "wtorek";
-daysOfWeek[2] = "środa";
-daysOfWeek[3] = "czwartek";
-daysOfWeek[4] = "piątek";
-daysOfWeek[5] = "sobota";
-daysOfWeek[6] = "niedziela";
+﻿int number = 4566;
+string numberInString = number.ToString(); 
+char[] letters = numberInString.ToArray();
+char[] digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+int count = 0;
 
-Console.WriteLine(daysOfWeek[2]);
+Console.WriteLine("Sprawdzenie ilości poszczególnych cyfr w liczbie " + number + ".");
+Console.WriteLine("");
 
-string[] daysOfWeek1 = {"poniedziałek", "wtorek", "środa" };
-
-Console.WriteLine(daysOfWeek[0]);
-
-for(int i=0; i<daysOfWeek.Length; i=i+2)
+Console.WriteLine("Rozwiązanie zadania z wykorzystaniem 2 pętli 'for':");
+for (int i = 0; i < digits.Length; i++)
 {
-    Console.WriteLine(daysOfWeek[i]);
+    for (int j = 0; j < letters.Length; j++)
+    {
+        if (digits[i] == letters[j])
+        {
+            count++;
+        }
+    }
+    Console.WriteLine(i + " => " + count);
+    count = 0;
 }
 
-List<string> dayOfWeek =  new List<string>();
-
-dayOfWeek.Add("poniedziałek");
-dayOfWeek.Add("wtorek");
-dayOfWeek.Add("środa");
-dayOfWeek.Add("czwartek");
-dayOfWeek.Add("piątek");
-dayOfWeek.Add("sobota");
-dayOfWeek.Add("niedziela");
-
-for (int i = 0; i < dayOfWeek.Count; i++)
+Console.WriteLine("");
+Console.WriteLine("Rozwiązanie zadania z wykorzystaniem 2 pętli 'foreach':");
+foreach (char digit in digits)
 {
-    Console.WriteLine("Dzień tygodnia nr "+ (i+1) + " to: " + dayOfWeek[i]);
+    foreach(char letter in letters)
+    {
+        if (digit == letter)
+        {
+            count++;
+        }
+    }
+    Console.WriteLine(digit + " => " + count);
+    count = 0;
 }
-
-foreach(var day in dayOfWeek)
-{ Console.WriteLine(day); } 
