@@ -1,37 +1,13 @@
-﻿int number = 4566;
-string numberInString = number.ToString(); 
-char[] letters = numberInString.ToArray();
-char[] digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-int count = 0;
+﻿using ChallengeApp;
 
-Console.WriteLine("Sprawdzenie ilości poszczególnych cyfr w liczbie " + number + ".");
-Console.WriteLine("");
+User user1 = new User("Adam", "32435sdfsdfw");
 
-Console.WriteLine("Rozwiązanie zadania z wykorzystaniem 2 pętli 'for':");
-for (int i = 0; i < digits.Length; i++)
-{
-    for (int j = 0; j < letters.Length; j++)
-    {
-        if (digits[i] == letters[j])
-        {
-            count++;
-        }
-    }
-    Console.WriteLine(i + " => " + count);
-    count = 0;
-}
+var name = user1.Login;
+var log = user1.Password;
+user1.AddScore(5);
+user1.AddScore(2);
+var result = user1.Result;
+var gameName = User.GameName;
+var pi = Math.PI;
 
-Console.WriteLine("");
-Console.WriteLine("Rozwiązanie zadania z wykorzystaniem 2 pętli 'foreach':");
-foreach (char digit in digits)
-{
-    foreach(char letter in letters)
-    {
-        if (digit == letter)
-        {
-            count++;
-        }
-    }
-    Console.WriteLine(digit + " => " + count);
-    count = 0;
-}
+Console.WriteLine(result);
