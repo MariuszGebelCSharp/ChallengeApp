@@ -1,5 +1,3 @@
-using System.Reflection.Metadata;
-
 namespace ChallengeApp.Test
 {
     public class Tests
@@ -45,12 +43,10 @@ namespace ChallengeApp.Test
             employee.AddGrade(3);
             employee.AddGrade(1.1F);
             employee.AddGrade(3.9F);
-
             // act
             var statisctics = employee.GetStatistics();
             // assert
             Assert.AreEqual(Math.Round(5.72, 2), Math.Round(statisctics.Average,2));
         }
-
     }
 }
