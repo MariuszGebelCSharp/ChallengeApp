@@ -14,7 +14,14 @@ while (true)
         Console.WriteLine();
         break;
     }
+    try
+    {
     employee.AddGrade(input);
+    }
+    catch(Exception e) 
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }   
     Console.WriteLine("Podaj kolejną ocenę pracownika!");
 }
 

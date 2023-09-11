@@ -2,12 +2,20 @@
 {
     public class Employee
     {
+        private readonly char sex = 'M'; //zmienną readonly można zmienić przy definiowaniu lub w konstruktorze - potem nie można 
+
         private List<float> grades = new List<float>();
+        public Employee(string name, string surname, char sex)
+        {
+            this.Name = name;
+            this.Surname = surname;
+            this.sex = 'K'; //zmienną readonly można zmienić przy definiowaniu lub w konstruktorze - potem nie można 
+        }
         public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
-        }
+            }
         public string Name { get; private set; }
         public string Surname { get; private set; }
        
@@ -19,7 +27,7 @@
             }
             else
             {
-                Console.WriteLine($"{grade:N2} is invalid grade value");
+                throw new Exception($"{grade:N2} is not valid grade value");
             }
         }
         public void AddGrade(string grade)
@@ -30,7 +38,7 @@
             }
             else
             {
-                Console.WriteLine("String is not float");
+                throw new Exception("String is not float!");
             }
         }
 
@@ -58,9 +66,8 @@
                 case 'e':
                     this.grades.Add(20);
                     break;
-                default: 
-                    Console.WriteLine("Wrong Letter!");
-                    break;
+                default:
+                    throw new Exception("Wrong Letter!");
             }
         }
         public Statistics GetStatistics()
