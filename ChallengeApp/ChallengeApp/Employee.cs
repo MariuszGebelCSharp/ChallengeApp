@@ -1,23 +1,26 @@
 ﻿namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
-        private readonly char sex = 'M'; //zmienną readonly można zmienić przy definiowaniu lub w konstruktorze - potem nie można 
-
         private List<float> grades = new List<float>();
-        public Employee(string name, string surname, char sex)
-        {
-            this.Name = name;
-            this.Surname = surname;
-            this.sex = 'K'; //zmienną readonly można zmienić przy definiowaniu lub w konstruktorze - potem nie można 
+
+        public Employee()
+            : this("no name")
+        { 
         }
-        public Employee(string name, string surname)
+        public Employee(string name)
+            : this(name, "no surname")
         {
-            this.Name = name;
-            this.Surname = surname;
-            }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
+        }
+
+        public Employee(string name, string surname)
+            : base (name, surname)
+        {
+        } 
+        public Employee(string name, string surname, char sex)
+            : base(name, surname, sex)
+        {    
+        }
        
         public void AddGrade(float grade)
         {
