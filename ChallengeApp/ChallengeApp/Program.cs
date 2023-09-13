@@ -3,8 +3,8 @@
 Console.WriteLine("Witamy w Programie XYZ do oceny pracowników!");
 Console.WriteLine("============================================");
 Console.WriteLine();
-Console.WriteLine("Podaj ocenę pracownika!");
-var employee = new Employee("Jan", "Kowalski");
+Console.WriteLine("Podaj ocenę dyrektora!");
+var employee = new Supervisor("Jan", "Kowalski");
 
 while (true)
 {
@@ -22,7 +22,7 @@ while (true)
     {
         Console.WriteLine($"Exception catched: {e.Message}");
     }   
-    Console.WriteLine("Podaj kolejną ocenę pracownika!");
+    Console.WriteLine("Podaj kolejną ocenę dyrektora!");
 }
 
 var statistics = employee.GetStatistics();
