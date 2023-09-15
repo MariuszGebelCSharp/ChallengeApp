@@ -25,36 +25,8 @@ namespace ChallengeApp
                 }    
         }
 
-        public override void AddGrade(char grade)
+        public void WriteGradeInFile(int result)
         {
-            int result = 0;
-            switch (grade)
-            {
-                case 'A':
-                case 'a':
-                    result = 100;
-                    break;
-                case 'B':
-                case 'b':
-                    result = 80;
-                    break;
-                case 'C':
-                case 'c':
-                    result = 60;
-                    break;
-                case 'D':
-                case 'd':
-                    result = 40;
-                    break;
-                case 'E':
-                case 'e':
-                    result = 20;
-                    break;
-                default:
-                    Console.WriteLine($"There is no grade for the letter: {grade}!");
-                    break;
-                    //throw new Exception("Wrong Letter!");
-            }
             if(result > 0)
             {
                 using (var writer = File.AppendText(fileName))

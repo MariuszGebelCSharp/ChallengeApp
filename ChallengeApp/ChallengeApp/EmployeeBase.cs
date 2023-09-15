@@ -14,9 +14,41 @@
 
         public abstract void AddGrade(float grade);
 
-        public abstract void AddGrade(char grade);
+        //public abstract void AddGrade(char grade);
 
-        public void AddGrade(double grade)
+        public int AddGrade(char grade)
+        {
+            int result = 0;
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    result = 100;
+                    break;
+                case 'B':
+                case 'b':
+                    result = 80;
+                    break;
+                case 'C':
+                case 'c':
+                    result = 60;
+                    break;
+                case 'D':
+                case 'd':
+                    result = 40;
+                    break;
+                case 'E':
+                case 'e':
+                    result = 20;
+                    break;
+                default:
+                    Console.WriteLine($"There is no grade for the letter: {grade}!");
+                    break;
+            }
+            return result;
+        }  
+
+    public void AddGrade(double grade)
         {
             float gradeAsFload = (float)grade;
             this.AddGrade(gradeAsFload);

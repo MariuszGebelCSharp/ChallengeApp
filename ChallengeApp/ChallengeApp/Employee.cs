@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp
 {
-    public class Employee : IEmployee
+    public class Employee
     {
         private List<float> grades = new List<float>();
 
