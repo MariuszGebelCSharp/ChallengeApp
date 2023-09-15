@@ -16,7 +16,7 @@
 
         //public abstract void AddGrade(char grade);
 
-        public int AddGrade(char grade)
+        public void AddGrade(char grade)
         {
             int result = 0;
             switch (grade)
@@ -45,7 +45,7 @@
                     Console.WriteLine($"There is no grade for the letter: {grade}!");
                     break;
             }
-            return result;
+            if (result > 0) AddGrade(result);
         }  
 
     public void AddGrade(double grade)

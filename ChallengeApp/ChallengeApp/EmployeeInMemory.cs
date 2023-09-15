@@ -29,11 +29,6 @@
             }
         }
 
-         public void AddGradeInList(int result)
-        {
-            this.grades.Add(result);
-        }
-
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();

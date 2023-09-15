@@ -17,23 +17,12 @@ namespace ChallengeApp
                     using (var writer = File.AppendText(fileName))
                     {
                         writer.WriteLine(grade);
-                }
+                    }
                 }
                 else
                 {
                     throw new Exception($"{grade:N2} is not valid grade value");
                 }    
-        }
-
-        public void WriteGradeInFile(int result)
-        {
-            if(result > 0)
-            {
-                using (var writer = File.AppendText(fileName))
-                {
-                    writer.WriteLine(result);
-                }
-            }
         }
 
         public override Statistics GetStatistics()

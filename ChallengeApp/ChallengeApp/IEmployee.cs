@@ -7,7 +7,7 @@
         void AddGrade(float grade);
         void AddGrade(double grade);
         void AddGrade(int grade);
-        int AddGrade(char grade);
+        void AddGrade(char grade);
         void AddGrade(string grade);
         Statistics GetStatistics();
     }
