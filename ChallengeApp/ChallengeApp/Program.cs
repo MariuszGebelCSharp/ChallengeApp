@@ -4,7 +4,7 @@ Console.WriteLine("Witamy w Programie XYZ do oceny pracowników!");
 Console.WriteLine("============================================");
 Console.WriteLine();
 Console.WriteLine("Podaj ocenę pracownika!");
-var employee = new EmployeeInMemory("Jan", "Kowalski");
+var employee = new EmployeeInFile("Jan", "Kowalski");
 employee.GradeAdded += EmployeeGradeAdded;
 
 void EmployeeGradeAdded(object sender, EventArgs args)
@@ -32,6 +32,7 @@ while (true)
 }
 
 var statistics = employee.GetStatistics();
+Console.WriteLine($"Liczba ocen: {statistics.Count}");
 Console.WriteLine($"AVG: {statistics.Average:N2}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Max: {statistics.Max}");
